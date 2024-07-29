@@ -1,0 +1,120 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-07-26 18:10:47.927297",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_ezd4",
+  "amended_from",
+  "aggregator",
+  "aggregator_account",
+  "transaction_date",
+  "branch",
+  "paid_amount",
+  "swipe_machine_transaction_no",
+  "charges",
+  "charge_amount",
+  "naming_series",
+  "amount_received_in_bank"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_ezd4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Aggregator Payments",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "aggregator",
+   "fieldtype": "Data",
+   "label": "Aggregator "
+  },
+  {
+   "fieldname": "aggregator_account",
+   "fieldtype": "Data",
+   "label": "Aggregator Account"
+  },
+  {
+   "fieldname": "transaction_date",
+   "fieldtype": "Date",
+   "label": "Transaction date"
+  },
+  {
+   "fieldname": "paid_amount",
+   "fieldtype": "Currency",
+   "label": "Paid Amount"
+  },
+  {
+   "fieldname": "swipe_machine_transaction_no",
+   "fieldtype": "Data",
+   "label": "Swipe Machine Transaction No"
+  },
+  {
+   "fieldname": "charges",
+   "fieldtype": "Percent",
+   "label": "Charges(%)"
+  },
+  {
+   "fieldname": "charge_amount",
+   "fieldtype": "Currency",
+   "label": "Charge Amount"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "naming_series",
+   "options": "AGG-"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Branch"
+  },
+  {
+   "default": "0",
+   "fieldname": "amount_received_in_bank",
+   "fieldtype": "Check",
+   "label": "Amount Received In Bank"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-07-29 15:57:48.173931",
+ "modified_by": "Administrator",
+ "module": "Payment Aggregator Reconciliation",
+ "name": "Aggregator Payments",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

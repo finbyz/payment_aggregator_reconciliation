@@ -1,0 +1,149 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-07-29 10:16:23.569619",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "posting_date",
+  "branch",
+  "get_payments",
+  "column_break_tqgy",
+  "bank_reference",
+  "bank_account",
+  "section_break_blcn",
+  "aggregator_payment_list",
+  "section_break_gymz",
+  "total_paid_amount",
+  "total_charges",
+  "naming_series",
+  "column_break_iycq",
+  "bank_received_amount",
+  "difference",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "bank_reference",
+   "fieldtype": "Link",
+   "label": "Bank Reference",
+   "options": "Bank"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Branch"
+  },
+  {
+   "fieldname": "bank_account",
+   "fieldtype": "Link",
+   "label": "Bank Account",
+   "options": "Bank Account"
+  },
+  {
+   "fieldname": "get_payments",
+   "fieldtype": "Button",
+   "label": "Get Payments"
+  },
+  {
+   "fieldname": "section_break_blcn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_gymz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_paid_amount",
+   "fieldtype": "Currency",
+   "label": "Total Paid Amount",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "bank_received_amount",
+   "fieldtype": "Currency",
+   "label": "Bank Received Amount"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_charges",
+   "fieldtype": "Currency",
+   "label": "Total Charges",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "difference",
+   "fieldtype": "Currency",
+   "label": "Difference",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_tqgy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_iycq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "aggregator_payment_list",
+   "fieldtype": "Table",
+   "label": "Aggregator Payment List",
+   "options": "All Aggregators Payments"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Aggregator To Bank Transfer",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "naming_series",
+   "options": "ABT-"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-07-29 15:30:18.250307",
+ "modified_by": "Administrator",
+ "module": "Payment Aggregator Reconciliation",
+ "name": "Aggregator To Bank Transfer",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

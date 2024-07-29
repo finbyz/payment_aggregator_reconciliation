@@ -28,7 +28,9 @@ app_license = "mit"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-# doctype_js = {"doctype" : "public/js/doctype.js"}
+doctype_js = {
+    "Aggregator To Bank Transfer" : "public/js/aggregator_to_bank_transfer.js"
+    }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -122,13 +124,17 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+	# "*": {
+	# 	"on_update": "method",
+	# 	"on_cancel": "method",
+	# 	"on_trash": "method"
+	# }
+    "Sales Invoice": {
+        "on_submit": "payment_aggregator_reconciliation.payment_aggregator_reconciliation.doc_events.sales_invoice.on_submit",
+        "on_cancel": "payment_aggregator_reconciliation.payment_aggregator_reconciliation.doc_events.sales_invoice.on_cancel"
+    }
+}
 
 # Scheduled Tasks
 # ---------------
