@@ -8,8 +8,9 @@ frappe.ui.form.on('Aggregator To Bank Transfer', {
                 fields: ['name','aggregator', 'aggregator_account', 'transaction_date', 'branch', 'paid_amount', 'swipe_machine_transaction_no', 'charges', 'charge_amount'],
                 filters: {
                     'amount_received_in_bank': 0,
-                    'transaction_date':  frm.doc.posting_date,
-                    'branch': frm.doc.branch,
+                    'transaction_date':  frm.doc.posting_date || '',
+                    'branch': frm.doc.branch || '',
+                    'aggregator': frm.doc.aggregator || '',
                 }
             },
             callback: function(r) {

@@ -130,9 +130,13 @@ doc_events = {
 	# 	"on_cancel": "method",
 	# 	"on_trash": "method"
 	# }
-    "Sales Invoice": {
-        "on_submit": "payment_aggregator_reconciliation.payment_aggregator_reconciliation.doc_events.sales_invoice.on_submit",
-        "on_cancel": "payment_aggregator_reconciliation.payment_aggregator_reconciliation.doc_events.sales_invoice.on_cancel"
+    "POS Invoice": {
+        "on_submit": "payment_aggregator_reconciliation.payment_aggregator_reconciliation.doc_events.pos_invoice.on_submit",
+        "on_cancel": "payment_aggregator_reconciliation.payment_aggregator_reconciliation.doc_events.pos_invoice.on_cancel"
+    },
+     "Aggregator To Bank Transfer": {
+        "on_submit": "payment_aggregator_reconciliation.payment_aggregator_reconciliation.doc_events.aggregator_to_bank_transfer.on_submit",
+        # "on_cancel": "payment_aggregator_reconciliation.payment_aggregator_reconciliation.doc_events.aggregator_to_bank_transfer.on_cancel"
     }
 }
 

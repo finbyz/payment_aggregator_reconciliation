@@ -8,10 +8,12 @@
  "field_order": [
   "posting_date",
   "branch",
+  "aggregator",
   "get_payments",
   "column_break_tqgy",
   "bank_reference",
   "bank_account",
+  "charges_account",
   "section_break_blcn",
   "aggregator_payment_list",
   "section_break_gymz",
@@ -118,12 +120,24 @@
    "hidden": 1,
    "label": "naming_series",
    "options": "ABT-"
+  },
+  {
+   "fieldname": "aggregator",
+   "fieldtype": "Link",
+   "label": "Aggregator",
+   "options": "Aggregators"
+  },
+  {
+   "fieldname": "charges_account",
+   "fieldtype": "Link",
+   "label": "Charges Account",
+   "options": "Account"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-29 15:30:18.250307",
+ "modified": "2024-07-30 12:08:44.361510",
  "modified_by": "Administrator",
  "module": "Payment Aggregator Reconciliation",
  "name": "Aggregator To Bank Transfer",
