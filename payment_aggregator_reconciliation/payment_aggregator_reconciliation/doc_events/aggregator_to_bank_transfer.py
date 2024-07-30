@@ -8,8 +8,8 @@ def on_submit(self, method):
     check_amount_received_in_bank(self, method)
     make_payment_entry(self, method)
 
-# def on_cancel(self, method):
-#     cancel_payment_entry(self, method)
+def on_cancel(self, method):
+    cancel_payment_entry(self, method)
 
     
 def make_payment_entry(self, method):
@@ -54,3 +54,10 @@ def check_amount_received_in_bank(self, method):
         doc = frappe.get_doc("Aggregator Payments", row.id)
         doc.amount_received_in_bank = 1
         doc.submit()
+
+def cancel_payment_entry(self, method):
+    payment_entry = frappe.get_doc('Payment Entry', {'reference_no': self.name})
+    # frappe.throw(payment_entry.name)
+    payment_entry.cancel()
+    frappe.db.commit()
+    # frappe.msgprint(_("Payment Entry is cancelled"))

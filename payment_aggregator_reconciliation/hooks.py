@@ -136,7 +136,7 @@ doc_events = {
     },
      "Aggregator To Bank Transfer": {
         "on_submit": "payment_aggregator_reconciliation.payment_aggregator_reconciliation.doc_events.aggregator_to_bank_transfer.on_submit",
-        # "on_cancel": "payment_aggregator_reconciliation.payment_aggregator_reconciliation.doc_events.aggregator_to_bank_transfer.on_cancel"
+        "on_cancel": "payment_aggregator_reconciliation.payment_aggregator_reconciliation.doc_events.aggregator_to_bank_transfer.on_cancel"
     }
 }
 
