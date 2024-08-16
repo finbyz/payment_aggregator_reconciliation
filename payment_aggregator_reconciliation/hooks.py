@@ -29,7 +29,8 @@ app_license = "mit"
 
 # include js in doctype views
 doctype_js = {
-    "Aggregator To Bank Transfer" : "public/js/aggregator_to_bank_transfer.js"
+    "Aggregator To Bank Transfer" : "public/js/aggregator_to_bank_transfer.js",
+    "Payment Entry" : "public/js/payment_entry.js",
     }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
