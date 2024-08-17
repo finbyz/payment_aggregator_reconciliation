@@ -4,6 +4,18 @@ app_publisher = "Finbyz Tech Pvt Ltd"
 app_description = "payment aggregator reconciliation"
 app_email = "info@finbyz.tech"
 app_license = "mit"
+
+
+fixtures = [
+       {
+         "dt": "Custom Field", 
+         "filters":[["module", "in", ['Payment Aggregator Reconciliation']]]
+      },
+    #   {
+    #         "dt": "Property Setter",
+    #         "filters":[["module", "in", ['Payment Aggregator Reconciliation']]]
+    #   }
+]
 # required_apps = []
 
 # Includes in <head>
