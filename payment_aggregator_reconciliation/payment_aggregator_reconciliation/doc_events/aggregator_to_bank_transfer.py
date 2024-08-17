@@ -18,6 +18,7 @@ def make_payment_entry(self, method):
             if self.bank_account:
                 company = frappe.get_all("Company")
                 doc = frappe.new_doc('Payment Entry')
+                doc.naming_series = ".custom_branch_code./IT/.fiscal.-.####"
                 doc.payment_type = "Internal Transfer"
                 doc.posting_date = frappe.utils.nowdate()
 
@@ -28,6 +29,7 @@ def make_payment_entry(self, method):
                 doc.paid_amount = self.total_paid_amount
                 doc.received_amount = self.bank_received_amount
                 doc.branch = self.branch
+                doc.cost_center = self.cost_center
 
                 # Handle child table 'deductions'
                 deduction = doc.append('deductions', {})
@@ -40,6 +42,7 @@ def make_payment_entry(self, method):
                 doc.reference_date = self.posting_date
 
                 doc.save()
+                doc.submit()
                 frappe.db.commit()
 
             else:
