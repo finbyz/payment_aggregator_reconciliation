@@ -125,7 +125,7 @@
    "fieldname": "aggregator",
    "fieldtype": "Link",
    "label": "Aggregator",
-   "options": "Aggregators"
+   "options": "Supplier"
   },
   {
    "fieldname": "charges_account",
@@ -137,7 +137,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-30 12:08:44.361510",
+ "modified": "2024-07-30 19:02:22.404990",
  "modified_by": "Administrator",
  "module": "Payment Aggregator Reconciliation",
  "name": "Aggregator To Bank Transfer",
