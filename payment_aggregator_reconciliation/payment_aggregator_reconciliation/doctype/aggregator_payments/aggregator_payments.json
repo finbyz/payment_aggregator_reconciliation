@@ -39,7 +39,7 @@
    "fieldname": "aggregator",
    "fieldtype": "Link",
    "label": "Aggregator ",
-   "options": "Aggregators"
+   "options": "Supplier"
   },
   {
    "fieldname": "aggregator_account",
@@ -98,7 +98,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-30 15:26:24.569748",
+ "modified": "2024-08-17 14:48:52.083329",
  "modified_by": "Administrator",
  "module": "Payment Aggregator Reconciliation",
  "name": "Aggregator Payments",
