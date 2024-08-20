@@ -78,7 +78,7 @@ def create_sales_invoice(doc, method):
 				serial_no = entry.serial_no
 				if serial_no:
 					serial_doc = frappe.get_doc("Serial No", serial_no)
-					serial_doc.discount = flt(item.rate - item.net_rate)
+					serial_doc.discount = flt(item.price_list_rate - item.net_rate)
 					serial_doc.discount_transaction_ref_no = pos_invoice.discount_transaction_no
 					serial_doc.save()
 
@@ -90,4 +90,5 @@ def consolidate_pos_invoice(self ,method):
 	self.db_set("status", "Consolidated")
 	frappe.db.commit()  		
 					
+
 
