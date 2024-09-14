@@ -20,7 +20,7 @@ def make_payment_entry(self, method):
                 doc = frappe.new_doc('Payment Entry')
                 doc.naming_series = ".custom_branch_code./IT/.fiscal.-.####"
                 doc.payment_type = "Internal Transfer"
-                doc.posting_date = frappe.utils.nowdate()
+                doc.posting_date = self.posting_date
 
                 doc.paid_from = frappe.get_value("Aggregators", self.aggregator, "aggregator_account")
                 doc.paid_to = frappe.get_value("Bank Account", self.bank_account, "account")
