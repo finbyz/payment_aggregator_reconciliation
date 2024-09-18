@@ -128,13 +128,22 @@ doctype_js = {
 # DocType Class
 # ---------------
 # Override standard doctype classes
+# For Credit Note Type Journal Entry Start
 from erpnext.accounts.doctype.tax_withholding_category import tax_withholding_category 
 from payment_aggregator_reconciliation.payment_aggregator_reconciliation.override.tax_withholding_category import get_tds_amount as get_tds_amount_override
 tax_withholding_category.get_tds_amount = get_tds_amount_override
+# Credit Note Type Journal Entry End
 
-# override_doctype_class = {
-# 	"ToDo": "custom_app.overrides.CustomToDo"
-# }
+# Debit Note Type Journal Entry Start
+from erpnext.accounts.doctype.tax_withholding_category import tax_withholding_category 
+from payment_aggregator_reconciliation.payment_aggregator_reconciliation.override.tax_withholding_category import get_invoice_total_without_tcs as get_invoice_total_without_tcs
+tax_withholding_category.get_invoice_total_without_tcs = get_invoice_total_without_tcs
+
+
+override_doctype_class = {
+	"Journal Entry": "payment_aggregator_reconciliation.payment_aggregator_reconciliation.override.journal_entry.JournalEntry",
+}
+# Debit Note Type Journal Entry End
 
 # Document Events
 # ---------------

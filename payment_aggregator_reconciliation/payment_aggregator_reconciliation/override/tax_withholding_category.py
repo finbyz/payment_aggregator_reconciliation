@@ -1,6 +1,7 @@
 import frappe
 from frappe.utils import cint, flt, getdate
-from erpnext.accounts.doctype.tax_withholding_category.tax_withholding_category import get_tds_amount
+from erpnext.accounts.doctype.tax_withholding_category.tax_withholding_category import get_tds_amount,get_invoice_total_without_tcs
+from erpnext.accounts.doctype.tax_withholding_category.tax_withholding_category import get_invoice_total_without_tcs
 
 def get_tds_amount(ldc, parties, inv, tax_details, vouchers):
     tds_amount = 0
@@ -48,10 +49,10 @@ def get_tds_amount(ldc, parties, inv, tax_details, vouchers):
         fields=["sum(unallocated_amount) as amount", "payment_type"],
         group_by="payment_type",
     )
-    # NoneType error solve by flt FinByz
+    # NoneType error solve by flt FinByz Start
     supp_credit_amt += flt(supp_jv_credit_amt)
     supp_credit_amt += flt(inv.tax_withholding_net_total)
-
+    #FinByz End
     for entry in payment_entry_amounts:
         if entry.payment_type == "Pay":
             supp_credit_amt += entry.amount
@@ -69,6 +70,7 @@ def get_tds_amount(ldc, parties, inv, tax_details, vouchers):
     if (threshold and flt(tax_withholding_net_total) >= threshold) or (
         cumulative_threshold and supp_credit_amt >= cumulative_threshold
     ):
+        # FinByz End
         if (cumulative_threshold and supp_credit_amt >= cumulative_threshold) and cint(
             tax_details.tax_on_excess_amount
         ):
@@ -102,3 +104,13 @@ def get_lower_deduction_amount(current_amount, limit_consumed, certificate_limit
         tds_amount = current_amount - ltds_amount
 
         return ltds_amount * rate / 100 + tds_amount * tax_details.rate / 100
+
+def get_invoice_total_without_tcs(inv, tax_details):
+    # inv.taxes None Handel by FinByz Start
+	inv.taxes = inv.get("taxes") or []
+    # FinByz End
+	tcs_tax_row = [d for d in inv.taxes if d.account_head == tax_details.account_head]
+	tcs_tax_row_amount = tcs_tax_row[0].base_tax_amount if tcs_tax_row else 0
+    # NoneType error solve by flt FinByz Start
+	return flt(inv.grand_total) - tcs_tax_row_amount
+    # FinByz End
