@@ -11,7 +11,8 @@ frappe.ui.form.on('Aggregator To Bank Transfer', {
                     'transaction_date':  frm.doc.posting_date || '',
                     'branch': frm.doc.branch || '',
                     'aggregator': frm.doc.aggregator || '',
-                }
+                },
+                limit_page_length: 200,
             },
             callback: function(r) {
                 frm.clear_table('aggregator_payment_list');
